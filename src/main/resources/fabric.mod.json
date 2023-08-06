@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "amethyst_update",
+	"version": "${version}",
+	"name": "Amethyst Update",
+	"description": "This mod makes Amethysts more useful in Minecraft!",
+	"authors": [
+		"redfox193"
+	],
+	"contact": {
+		"homepage": "",
+		"sources": ""
+	},
+	"license": "MIT",
+	"icon": "assets/amethyst_update/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"redfx.amethyst_update.AmethystUpdate"
+		],
+		"client": [
+			"redfx.amethyst_update.AmethystUpdateClient"
+		],
+		"fabric-datagen": [
+			"redfx.amethyst_update.AmethystUpdateDataGenerator"
+		]
+	},
+	"mixins": [
+		"amethyst_update.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.14.21",
+		"minecraft": "~1.19.4",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

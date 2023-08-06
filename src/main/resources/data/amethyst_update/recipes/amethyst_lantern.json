@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:torch"
+    },
+    "X": {
+      "item": "minecraft:iron_nugget"
+    },
+    "Y": {
+      "item": "minecraft:amethyst_shard"
+    }
+  },
+  "pattern": [
+    "XXX",
+    "Y#Y",
+    "XXX"
+  ],
+  "result": {
+    "item": "amethyst_update:amethyst_lantern"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "#": {
+      "item": "amethyst_update:mysterious_stick"
+    },
+    "X": {
+      "item": "amethyst_update:reinforced_amethyst"
+    }
+  },
+  "pattern": [
+    "X",
+    "#",
+    "#"
+  ],
+  "result": {
+    "item": "amethyst_update:ancient_staff"
+  },
+  "show_notification": true
+}
