@@ -24,10 +24,10 @@ public class EnchantmentHelperMixin {
             }
             switch (slotIndex) {
                 case 0:
-                    r.setReturnValue(28);
+                    r.setReturnValue(30);
                     break;
                 case 1:
-                    r.setReturnValue(30);
+                    r.setReturnValue(32);
                     break;
                 case 2:
                     r.setReturnValue(0);
