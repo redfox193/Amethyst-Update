@@ -32,7 +32,7 @@ import java.util.List;
 
 public class AncientStaffItem extends Item{
 
-    private final int cooldownDuration = 8 * 60 * 20;
+    private final int cooldownDuration = 6 * 60 * 20;
     public ArrayList<Enchantment> currentEnchantments;
     public boolean generateNewEnchantments = true;
 
