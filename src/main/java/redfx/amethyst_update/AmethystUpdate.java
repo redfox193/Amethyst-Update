@@ -22,7 +22,6 @@ public class AmethystUpdate implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		ModItems.registerModItems();
-		ModItemGroup.registerItemGroups();
 		ModBlocks.registerModBlocks();
 		ModEntities.registerModEntities();
 		ModEffects.registerModEffects();
@@ -32,6 +31,6 @@ public class AmethystUpdate implements ModInitializer {
 		ModEnchantments.registerModEnchantments();
 		ModPotions.registerModPotions();
 
-		ModItems.addItemsToItemGroup();
+		ModItemGroup.registerItemGroups();
 	}
 }

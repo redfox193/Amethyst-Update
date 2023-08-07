@@ -23,7 +23,7 @@ public class BleedingEffect extends StatusEffect {
     public void applyUpdateEffect(LivingEntity entity, int amplifier) {
         super.applyUpdateEffect(entity, amplifier);
 
-        if (entity.world.isClient()) {
+        if (entity.getWorld().isClient()) {
             return;
         }
 
@@ -33,7 +33,7 @@ public class BleedingEffect extends StatusEffect {
                 || (entity instanceof SkeletonHorseEntity))
             return;
 
-        DynamicRegistryManager registry = entity.world.getRegistryManager();
+        DynamicRegistryManager registry = entity.getWorld().getRegistryManager();
         entity.damage(ModDamageSources.bleeding(registry), damage + 0.25f * amplifier);
     }
 

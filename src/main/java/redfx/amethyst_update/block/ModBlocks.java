@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
+import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -17,24 +18,20 @@ import redfx.amethyst_update.item.ModItemGroup;
 
 public class ModBlocks {
     public static final Block AMETHYST_LANTERN = registerBlock("amethyst_lantern",
-            new LanternBlock(AbstractBlock.Settings.of(Material.METAL)
-                    .strength(3.5f)
+            new LanternBlock(AbstractBlock.Settings.create()
+                    .mapColor(MapColor.IRON_GRAY)
+                    .solid()
                     .requiresTool()
+                    .strength(3.5F)
                     .sounds(BlockSoundGroup.LANTERN)
-                    .luminance(state -> 10)
-                    .nonOpaque()),
-            ModItemGroup.AMETHYST_UPDATE);
+                    .luminance((state) -> {
+                        return 10;
+                    })
+                    .nonOpaque()
+                    .pistonBehavior(PistonBehavior.DESTROY)));
 
-    private static Block registerBlock(String name, Block block, ItemGroup group) {
-        registerBlockItem(name, block, group);
+    private static Block registerBlock(String name, Block block) {
         return Registry.register(Registries.BLOCK, new Identifier(AmethystUpdate.MOD_ID, name), block);
-    }
-
-    private static Item registerBlockItem(String name, Block block, ItemGroup group) {
-        Item item = Registry.register(Registries.ITEM, new Identifier(AmethystUpdate.MOD_ID, name),
-                new BlockItem(block, new FabricItemSettings()));
-        ItemGroupEvents.modifyEntriesEvent(group).register(entries -> entries.add(item));
-        return item;
     }
 
     public static void registerModBlocks() {

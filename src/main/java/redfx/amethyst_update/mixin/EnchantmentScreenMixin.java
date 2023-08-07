@@ -41,18 +41,18 @@ public class EnchantmentScreenMixin {
         return false;
     }
 
-    @ModifyArgs(method = "drawBackground", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/screen/ingame/EnchantmentScreen;drawTexture(Lnet/minecraft/client/util/math/MatrixStack;IIIIII)V"))
+    @ModifyArgs(method = "drawBackground", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/DrawContext;drawTexture(Lnet/minecraft/util/Identifier;IIIIII)V"))
     public void drawBackgroundModifying(Args args) {
         if(((int) args.get(4) == 239 || (int) args.get(4) == 223) && isStaffEnchantment())
             args.set(3, 32);
     }
 
-    @ModifyVariable(method = "drawBackground", at = @At("STORE"), ordinal = 5)
-    public int modifyCost(int n) {
-        if(isStaffEnchantment() && n < 3)
+    @ModifyVariable(method = "drawBackground", at = @At("STORE"), ordinal = 4)
+    public int modifyCost(int k) {
+        if(isStaffEnchantment() && k < 3)
             return 0;
         else
-            return n;
+            return k;
     }
 
     @ModifyVariable(method = "render", at = @At("STORE"), ordinal = 6)
