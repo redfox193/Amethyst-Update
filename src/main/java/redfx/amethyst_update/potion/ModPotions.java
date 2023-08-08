@@ -16,13 +16,13 @@ import redfx.amethyst_update.item.ModItems;
 
 public class ModPotions {
     public static Potion BLEEDING_POTION = register("bleeding_potion",
-            new Potion(new StatusEffectInstance(ModEffects.BLEEDING, 20 * 20)));
+            new Potion(new StatusEffectInstance(ModEffects.BLEEDING, 15 * 20)));
 
     public static Potion LONG_BLEEDING_POTION = register("long_bleeding_potion",
-            new Potion(new StatusEffectInstance(ModEffects.BLEEDING, 30 * 20)));
+            new Potion(new StatusEffectInstance(ModEffects.BLEEDING, 20 * 20)));
 
     public static Potion STRONG_BLEEDING_POTION = register("strong_bleeding_potion",
-            new Potion(new StatusEffectInstance(ModEffects.BLEEDING, 20 * 20, 1)));
+            new Potion(new StatusEffectInstance(ModEffects.BLEEDING, 15 * 20, 1)));
 
 
 
