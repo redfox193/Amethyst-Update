@@ -6,9 +6,11 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.boss.WitherEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.mob.SkeletonEntity;
 import net.minecraft.entity.mob.SkeletonHorseEntity;
+import net.minecraft.entity.mob.StrayEntity;
 import net.minecraft.entity.mob.WitherSkeletonEntity;
 import net.minecraft.entity.passive.GolemEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -88,6 +90,8 @@ public class AncientStaffItem extends Item{
             if ((livingEntity instanceof SkeletonEntity)
                     || (livingEntity instanceof WitherSkeletonEntity)
                     || (livingEntity instanceof GolemEntity)
+                    || (livingEntity instanceof StrayEntity)
+                    || (livingEntity instanceof WitherEntity)
                     || (livingEntity instanceof SkeletonHorseEntity))
                 continue;
             livingEntity.addStatusEffect(new StatusEffectInstance(ModEffects.BLEEDING, 50, amplifier, false, false));

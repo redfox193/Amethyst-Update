@@ -2,10 +2,12 @@ package redfx.amethyst_update.mixin;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.boss.WitherEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.mob.SkeletonEntity;
 import net.minecraft.entity.mob.SkeletonHorseEntity;
+import net.minecraft.entity.mob.StrayEntity;
 import net.minecraft.entity.mob.WitherSkeletonEntity;
 import net.minecraft.entity.passive.GolemEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -49,7 +51,9 @@ public class LivingEntityMixin {
         if((attacker instanceof SkeletonEntity)
                 || (attacker instanceof WitherSkeletonEntity)
                 || (attacker instanceof GolemEntity)
-                || (attacker instanceof SkeletonHorseEntity))
+                || (attacker instanceof StrayEntity)
+                || (attacker instanceof SkeletonHorseEntity)
+                || (attacker instanceof WitherEntity))
             return;
 
         if(entity.hasStatusEffect(ModEffects.TEMPERED) && attacker instanceof LivingEntity && !source.isIndirect()) {
