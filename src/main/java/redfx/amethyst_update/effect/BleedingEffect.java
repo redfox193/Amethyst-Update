@@ -2,12 +2,15 @@ package redfx.amethyst_update.effect;
 
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.boss.WitherEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
+import net.minecraft.entity.mob.PhantomEntity;
 import net.minecraft.entity.mob.SkeletonEntity;
 import net.minecraft.entity.mob.SkeletonHorseEntity;
 import net.minecraft.entity.mob.WitherSkeletonEntity;
 import net.minecraft.entity.passive.GolemEntity;
+import net.minecraft.entity.projectile.WitherSkullEntity;
 import net.minecraft.registry.DynamicRegistryManager;
 import redfx.amethyst_update.AmethystUpdate;
 import redfx.amethyst_update.entity.damage.ModDamageSources;
@@ -30,7 +33,8 @@ public class BleedingEffect extends StatusEffect {
         if((entity instanceof SkeletonEntity)
                 || (entity instanceof WitherSkeletonEntity)
                 || (entity instanceof GolemEntity)
-                || (entity instanceof SkeletonHorseEntity))
+                || (entity instanceof SkeletonHorseEntity)
+                || (entity instanceof WitherEntity))
             return;
 
         DynamicRegistryManager registry = entity.getWorld().getRegistryManager();
