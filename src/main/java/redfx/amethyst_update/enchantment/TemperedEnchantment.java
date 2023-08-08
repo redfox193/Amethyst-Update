@@ -38,6 +38,6 @@ public class TemperedEnchantment extends Enchantment {
 
     @Override
     public boolean canAccept(Enchantment other) {
-        return super.canAccept(other) && other != ModEnchantments.TEMPERED;
+        return super.canAccept(other) && other != ModEnchantments.SHATTERED;
     }
 }
