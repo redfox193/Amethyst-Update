@@ -45,12 +45,12 @@ public class BleedingEffect extends StatusEffect {
     public void onApplied(LivingEntity entity, AttributeContainer attributes, int amplifier) {
         super.onApplied(entity, attributes, amplifier);
 
-        if ((entity instanceof SkeletonEntity)
+        if (((entity instanceof SkeletonEntity)
                 || (entity instanceof WitherSkeletonEntity)
                 || (entity instanceof GolemEntity)
                 || (entity instanceof SkeletonHorseEntity)
                 || (entity instanceof StrayEntity)
-                || (entity instanceof WitherEntity)
+                || (entity instanceof WitherEntity))
                 && entity.hasStatusEffect(ModEffects.BLEEDING))
             entity.removeStatusEffect(ModEffects.BLEEDING);
     }
