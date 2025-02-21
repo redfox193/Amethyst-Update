@@ -29,7 +29,7 @@ public class ModItems {
             new MysteriousStickItem(new FabricItemSettings().fireproof()));
 
     public static final Item ANCIENT_STAFF = registerItem("ancient_staff",
-            new AncientStaffItem(new FabricItemSettings().maxDamage(100).fireproof()));
+            new AncientStaffItem(new FabricItemSettings().maxDamage(16).fireproof()));
 
     public static final Item AMETHYST_DUST = registerItem("amethyst_dust",
             new AmethystDustItem(new FabricItemSettings()));
